@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-const pageTitle = "Meu Blog de Aprendizado sobre Astro";
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,13 +17,7 @@ const pageTitle = "Meu Blog de Aprendizado sobre Astro";
   <body>
     <Header />
     <h1>{pageTitle}</h1>
-    <p>Aqui é onde postarei sobre minha jornada aprendendo Astro.</p>
-
-    <ul>
-      <li><a href="/posts/post-1/">Postagem 1</a></li>
-      <li><a href="/posts/post-2/">Postagem 2</a></li>
-      <li><a href="/posts/post-3/">Postagem 3</a></li>
-    </ul>
+    <slot />
     <Footer />
     <script>
       import "../scripts/menu.js";
